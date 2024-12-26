@@ -9,7 +9,6 @@ const createSelectors = _store => {
   for (const k of Object.keys(store.getState())) {
     store.use[k] = () => store(s => s[k])
   }
-
   return store
 }
 
@@ -27,8 +26,6 @@ const store0=create(devtools((set,get)=>({
   },
 })))
 
-//const myStore = createStore(() => ({ id: 0 }))
-//const storeBase = selector => useStore(store0, selector)
 export const store= createSelectors(store0);
 
 export default store;
